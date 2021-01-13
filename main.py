@@ -15,7 +15,7 @@ def ImportData(assessdata):
         x = 0 # used to perfom the first 2 sections of the TaxKey
         TaxKey = row['Print Key'] # TaxKey is the Tax Map code on the tax roll
 
-        print(TaxKey)
+        # print(TaxKey)
 
         count = 0
         for key in TaxKey:
@@ -48,12 +48,12 @@ def ImportData(assessdata):
                 # print(real_key)
         if len(search_key) != 20:
             search_key += '000'
-        print(search_key)
 
+        #print(search_key)
+        df_assessed['printkey'][i]= search_key
 
-
-    ##print(df_assessed[['SWIS Code','Print Key', 'Location', 'printkey']].tail())
-
+    print(df_assessed[['Print Key', 'printkey']].head())
+    print(df_assessed[['Print Key', 'printkey']].tail())
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     ImportData("c:\\temp\FULTON_AssessmentRole.csv")
