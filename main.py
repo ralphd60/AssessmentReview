@@ -49,7 +49,7 @@ def ImportData(assessdata):
         if len(search_key) != 20:
             search_key += '000'
 
-        #print(search_key)
+        print(search_key)
         df_assessed['printkey'][i]= search_key
 
     print(df_assessed[['Print Key', 'printkey']].head())
